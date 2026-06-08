@@ -15,3 +15,4 @@ Pillow==10.3.0
 minisom==2.3.1
 eventlet==0.36.1
 gunicorn==21.2.0
+mysql-connector-python==8.3.0
