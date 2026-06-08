@@ -1,0 +1,26 @@
+cat > .gitignore << 'EOF'
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.env.local
+
+# MNIST dataset - nặng, server tự download
+BE/data/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+EOF

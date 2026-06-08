@@ -1,0 +1,17 @@
+flask==3.0.3
+flask-cors==4.0.1
+flask-socketio==5.3.6
+flask-sqlalchemy==3.1.1
+flask-jwt-extended==4.6.0
+werkzeug==3.0.3
+python-dotenv==1.0.1
+pymysql==1.1.1
+PyJWT==2.8.0
+cryptography==42.0.8
+torch==2.3.0
+torchvision==0.18.0
+numpy==1.26.4
+Pillow==10.3.0
+minisom==2.3.1
+eventlet==0.36.1
+gunicorn==21.2.0
