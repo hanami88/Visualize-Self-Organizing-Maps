@@ -1,3 +1,6 @@
+import eventlet
+eventlet.monkey_patch()
+
 print("1.1 Bắt đầu import thư viện chuẩn...")
 import os, json, base64, threading, pickle
 from datetime import datetime, timedelta
@@ -65,8 +68,8 @@ CORS(app,
      methods=["GET", "POST", "OPTIONS", "PUT", "DELETE"])
 socketio = SocketIO(
     app,
-    cors_allowed_origins=[FRONTEND_URL],
-    async_mode="threading",
+    cors_allowed_origins="*",
+    async_mode="eventlet",
     logger=False,
     engineio_logger=False,
 )
@@ -1612,11 +1615,11 @@ def get_presets_info():
     return jsonify(result)
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
     socketio.run(
         app,
         host="0.0.0.0",
-        port=8000,
+        port=port,
         debug=False,
         use_reloader=False,
-        allow_unsafe_werkzeug=True,
     )
