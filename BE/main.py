@@ -363,6 +363,19 @@ def _preload_default():
         ]
         print(f"[server] Default layer_soms loaded: {len(layer_soms)} layers")
 
+# ── Pre-download MNIST dataset khi server start ────────────────────────────
+print("[Init] Kiểm tra và download MNIST dataset...")
+try:
+    _mnist_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,)),
+    ])
+    datasets.MNIST("./data", train=True, download=True, transform=_mnist_transform)
+    datasets.MNIST("./data", train=False, download=True, transform=_mnist_transform)
+    print("[Init] MNIST dataset OK!")
+except Exception as e:
+    print(f"[Init] MNIST download warning: {e}")
+
 print("[Init] Bắt đầu load model mặc định...")
 with app.app_context():
     _preload_default()
