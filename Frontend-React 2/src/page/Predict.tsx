@@ -5,7 +5,7 @@ import { RotateCcw, Upload, Zap, X } from "lucide-react";
 import axios from "axios";
 import HexagonalGrid from "../components/HexagonalGrid";
 import Nav from "../components/Nav.tsx";
-import { useAuth } from "../context/AuthContext.tsx/index.ts";
+import { useAuth } from "../context/AuthContext";
 // ── Preset options ─────────────────────────────────────────────────────────
 
 interface MyModel {

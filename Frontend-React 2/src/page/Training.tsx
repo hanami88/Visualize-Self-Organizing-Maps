@@ -15,7 +15,7 @@ import {
 import HexagonalGrid from "../components/HexagonalGrid.tsx";
 import { io, Socket } from "socket.io-client";
 import axios from "axios";
-import { useAuth } from "../context/AuthContext.tsx/index.ts";
+import { useAuth } from "../context/AuthContext";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface LayerSOM {

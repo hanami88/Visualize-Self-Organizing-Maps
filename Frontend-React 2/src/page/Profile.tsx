@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Eye, EyeOff, User, Mail, Shield } from "lucide-react";
-import { useAuth } from "../context/AuthContext.tsx";
+import { useAuth } from "../context/AuthContext";
 import { ButtonBlack, ButtonBlue } from "../components/Button";
 
 export default function Profile() {
