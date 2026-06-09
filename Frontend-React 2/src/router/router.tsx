@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { AuthProvider } from "../context/AuthContext";
+import { AuthProvider } from "../context/AuthContext.tsx";
 import Index from "../page/Index";
 import Training from "../page/Training";
 import Login from "../page/Login";

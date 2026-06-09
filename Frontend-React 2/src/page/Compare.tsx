@@ -407,17 +407,30 @@ export default function Compare() {
                         ) : model ? (
                           <HexagonalGrid
                             layerSoms={
-                              [model.layer_soms[selectedLayer]] as Parameters<
+                              (() => {
+                                const safeLayer = Math.min(
+                                  selectedLayer,
+                                  model.layer_soms.length - 1,
+                                );
+                                const layerData = model.layer_soms[safeLayer];
+                                return layerData ? [layerData] : [];
+                              })() as Parameters<
                                 typeof HexagonalGrid
                               >[0]["layerSoms"]
                             }
-                            somSize={
-                              (
-                                model.layer_soms[selectedLayer] as {
-                                  som_size?: number;
-                                }
-                              )?.som_size ?? 10
-                            }
+                            somSize={(() => {
+                              const safeLayer = Math.min(
+                                selectedLayer,
+                                model.layer_soms.length - 1,
+                              );
+                              return (
+                                (
+                                  model.layer_soms[safeLayer] as {
+                                    som_size?: number;
+                                  }
+                                )?.som_size ?? 10
+                              );
+                            })()}
                           />
                         ) : (
                           <div className="h-48 flex items-center justify-center text-sm text-gray-400">

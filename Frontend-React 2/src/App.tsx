@@ -1,5 +1,5 @@
 import Router from "./router/router";
-import { useAuth } from "../src/context/AuthContext";
+import { useAuth } from "./context/AuthContext.tsx";
 
 function App() {
   const { isLoading } = useAuth();
