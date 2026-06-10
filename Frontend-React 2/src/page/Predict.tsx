@@ -416,7 +416,13 @@ export default function Predict() {
     } finally {
       setIsProcessing(false);
     }
-  }, [activeSource, uploadedImage, authHeaders, refreshAccessToken]);
+  }, [
+    activeSource,
+    uploadedImage,
+    authHeaders,
+    refreshAccessToken,
+    selectedSource,
+  ]);
 
   // ── Render ────────────────────────────────────────────────────────────────
   return (
@@ -431,11 +437,6 @@ export default function Predict() {
           <p className="text-sm text-muted-foreground">
             Vẽ một chữ số hoặc tải lên một hình ảnh, SOM sẽ làm nổi bật vị trí
             mà đầu vào của bạn tương ứng
-            {user && (
-              <span className="ml-2 text-blue-600 font-medium">
-                · Sử dụng model của {user.name}
-              </span>
-            )}
           </p>
         </div>
 
